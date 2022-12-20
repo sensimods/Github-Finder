@@ -1,4 +1,4 @@
-import {FaCodepen, FaStore, FaUserFriends, FaUsers} from 'react-icons/fa'
+import {FaCodepen, FaStore, FaUserFriends, FaUsers, FaMapMarkerAlt, FaGlobe, FaTwitter} from 'react-icons/fa'
 import Spinner from '../components/layout/Spinner'
 import {useEffect, useContext} from 'react'
 import {useParams, Link} from 'react-router-dom'
@@ -89,14 +89,24 @@ function User() {
               <div className='w-full rounded-lg shadow-md bg-base-100 grid grid-cols-1 gap-2  lg:grid-cols-3 lg:gap-2 md:grid-cols-2 md:gap-2'>
                 {location && (
                   <div className='stat shadow-md lg:shadow-none md:shadow-md'>
-                    <div className='stat-title text-md'>Location</div>
+                    <div className='stat-title text-md grid grid-cols-2'>
+                      Location
+                      <span className='grid justify-end'>
+                        <FaMapMarkerAlt className='text-info' />
+                      </span>
+                    </div>
                     <div className='text-lg stat-value'>{location}</div>
                   </div>
                 )}
 
                 {blog && (
                   <div className='stat shadow-md lg:shadow-none md:shadow-md'>
-                    <div className='stat-title text-md'>Website</div>
+                    <div className='stat-title text-md grid grid-cols-2'>
+                      Website
+                      <span className='grid justify-end'>
+                        <FaGlobe className='text-info' />
+                      </span>
+                    </div>
                     <div className='text-lg stat-value'>
                       <a
                         href={`https://${blog}`}
@@ -111,7 +121,12 @@ function User() {
 
                 {twitter_username && (
                   <div className='stat'>
-                    <div className='stat-title text-md'>Twitter</div>
+                    <div className='stat-title text-md grid grid-cols-2'>
+                      Twitter
+                      <span className='grid justify-end'>
+                        <FaTwitter className='text-info' />
+                      </span>
+                    </div>
                     <div className='text-lg stat-value'>
                       <a
                         href={`https://twitter.com/${twitter_username}`}
