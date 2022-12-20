@@ -85,43 +85,45 @@ function User() {
               </div>
             </div>
 
-            <div className='w-full rounded-lg shadow-md bg-base-100 stats'>
-              {location && (
-                <div className='stat'>
-                  <div className='stat-title text-md'>Location</div>
-                  <div className='text-lg stat-value'>{location}</div>
-                </div>
-              )}
-
-              {blog && (
-                <div className='stat'>
-                  <div className='stat-title text-md'>Website</div>
-                  <div className='text-lg stat-value'>
-                    <a
-                      href={`https://${blog}`}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      {blog}
-                    </a>
+            <div className='container mx-auto'>
+              <div className='w-full rounded-lg shadow-md bg-base-100 grid grid-cols-1 gap-2  lg:grid-cols-3 lg:gap-2 md:grid-cols-2 md:gap-2'>
+                {location && (
+                  <div className='stat shadow-md lg:shadow-none md:shadow-md'>
+                    <div className='stat-title text-md'>Location</div>
+                    <div className='text-lg stat-value'>{location}</div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {twitter_username && (
-                <div className='stat'>
-                  <div className='stat-title text-md'>Twitter</div>
-                  <div className='text-lg stat-value'>
-                    <a
-                      href={`https://twitter.com/${twitter_username}`}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      {twitter_username}
-                    </a>
+                {blog && (
+                  <div className='stat shadow-md lg:shadow-none md:shadow-md'>
+                    <div className='stat-title text-md'>Website</div>
+                    <div className='text-lg stat-value'>
+                      <a
+                        href={`https://${blog}`}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        {blog}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+
+                {twitter_username && (
+                  <div className='stat'>
+                    <div className='stat-title text-md'>Twitter</div>
+                    <div className='text-lg stat-value'>
+                      <a
+                        href={`https://twitter.com/${twitter_username}`}
+                        target='_blank'
+                        rel='noreferrer'
+                      >
+                        {twitter_username}
+                      </a>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
