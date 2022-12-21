@@ -51,26 +51,34 @@ function User() {
         </div>
         <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8'>
           <div className='custom-card-image mb-6 md:mb-0'>
-            <div className='rounded-lg shadow-xl card image-full'>
-              <figure>
-                <img src={avatar_url} alt='avatar' />
-              </figure>
-              <div className='card-body justify-end'>
-                <h2 className='card-title mb-0'>{name}</h2>
-                <p>{login}</p>
-              </div>
+            <div>
+              <img
+                className='rounded-lg shadow-xl image-full'
+                src={avatar_url}
+                alt='avatar'
+              />
             </div>
           </div>
 
           <div className='col-span-2'>
             <div className='mb-6'>
-              <h1 className='text-3xl card-title'>
+              <h1 className='text-3xl card-title whitespace-nowrap'>
                 {name}
-                <div className='ml-2 mr-1 badge badge-success'>{type}</div>
+                <span className='hidden xl:inline lg:inline md:inline'>
+                  ({login})
+                </span>
+                <div className='ml-2 mr-1 badge badge-success badge-lg xl:badge-lg lg:badge-lg md:badge-sm'>
+                  {type}
+                </div>
                 {hireable && (
-                  <div className='mx-1 badge badge-info'>Hireable</div>
+                  <div className='mx-1 badge badge-info badge-lg xl:badge-lg lg:badge-lg md:badge-sm'>
+                    Hireable
+                  </div>
                 )}
               </h1>
+              <span className='text-xl xl:hidden lg:hidden md:hidden'>
+                ({login})
+              </span>
               <p>{bio}</p>
 
               <div className='mt-4 card-actions'>
@@ -86,13 +94,13 @@ function User() {
             </div>
 
             <div className='container mx-auto'>
-              <div className='w-full rounded-lg shadow-md bg-base-100 grid grid-cols-1 gap-2  lg:grid-cols-3 lg:gap-2 md:grid-cols-2 md:gap-2'>
+              <div className='w-full rounded-lg bg-base-100 grid grid-cols-1 gap-2 xl:grid-cols-3 xl:gap-2 lg:grid-cols-32 lg:gap-2 md:grid-cols-2 md:gap-2'>
                 {location && (
-                  <div className='stat shadow-md lg:shadow-none md:shadow-md'>
+                  <div className='stat shadow-md shadow-base-300'>
                     <div className='stat-title text-md grid grid-cols-2'>
                       Location
                       <span className='grid justify-end'>
-                        <FaMapMarkerAlt className='text-info' />
+                        <FaMapMarkerAlt className='text-blue-500' />
                       </span>
                     </div>
                     <div className='text-lg stat-value'>{location}</div>
@@ -100,11 +108,11 @@ function User() {
                 )}
 
                 {blog && (
-                  <div className='stat shadow-md lg:shadow-none md:shadow-md'>
+                  <div className='stat shadow-md shadow-base-300'>
                     <div className='stat-title text-md grid grid-cols-2'>
                       Website
                       <span className='grid justify-end'>
-                        <FaGlobe className='text-info' />
+                        <FaGlobe className='text-blue-500' />
                       </span>
                     </div>
                     <div className='text-lg stat-value'>
@@ -120,11 +128,11 @@ function User() {
                 )}
 
                 {twitter_username && (
-                  <div className='stat'>
+                  <div className='stat shadow-md shadow-base-300'>
                     <div className='stat-title text-md grid grid-cols-2'>
                       Twitter
                       <span className='grid justify-end'>
-                        <FaTwitter className='text-info' />
+                        <FaTwitter className='text-blue-500' />
                       </span>
                     </div>
                     <div className='text-lg stat-value'>
@@ -143,45 +151,49 @@ function User() {
           </div>
         </div>
 
-        <div className='w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats'>
-          <div className='stat'>
-            <div className='stat-figure text-secondary'>
-              <FaUsers className='text-3xl md:text-5xl' />
+        <div className='container mx-auto'>
+          <div className='w-full rounded-lg bg-base-100 grid grid-cols-1 gap-2 xl:grid-cols-4 xl:gap-2 lg:grid-cols-4 lg:gap-2 md:grid-cols-2 md:gap-2'>
+            {/* start of items */}
+            <div className='stat shadow-md shadow-base-300'>
+              <div className='stat-figure text-blue-500'>
+                <FaUsers className='text-3xl md:text-5xl' />
+              </div>
+              <div className='stat-title pr-5'>Followers</div>
+              <div className='stat-value pr-5 text-3xl md:text-4xl'>
+                {followers}
+              </div>
             </div>
-            <div className='stat-title pr-5'>Followers</div>
-            <div className='stat-value pr-5 text-3xl md:text-4xl'>
-              {followers}
-            </div>
-          </div>
 
-          <div className='stat'>
-            <div className='stat-figure text-secondary'>
-              <FaUserFriends className='text-3xl md:text-5xl' />
+            <div className='stat shadow-md shadow-base-300'>
+              <div className='stat-figure text-blue-500'>
+                <FaUserFriends className='text-3xl md:text-5xl' />
+              </div>
+              <div className='stat-title pr-5'>Following</div>
+              <div className='stat-value pr-5 text-3xl md:text-4xl'>
+                {following}
+              </div>
             </div>
-            <div className='stat-title pr-5'>Following</div>
-            <div className='stat-value pr-5 text-3xl md:text-4xl'>
-              {following}
-            </div>
-          </div>
 
-          <div className='stat'>
-            <div className='stat-figure text-secondary'>
-              <FaCodepen className='text-3xl md:text-5xl' />
+            <div className='stat shadow-md shadow-base-300'>
+              <div className='stat-figure text-blue-500'>
+                <FaCodepen className='text-3xl md:text-5xl' />
+              </div>
+              <div className='stat-title pr-5'>Public Repos</div>
+              <div className='stat-value pr-5 text-3xl md:text-4xl'>
+                {public_repos}
+              </div>
             </div>
-            <div className='stat-title pr-5'>Public Repos</div>
-            <div className='stat-value pr-5 text-3xl md:text-4xl'>
-              {public_repos}
-            </div>
-          </div>
 
-          <div className='stat'>
-            <div className='stat-figure text-secondary'>
-              <FaStore className='text-3xl md:text-5xl' />
+            <div className='stat shadow-md shadow-base-300'>
+              <div className='stat-figure text-blue-500'>
+                <FaStore className='text-3xl md:text-5xl' />
+              </div>
+              <div className='stat-title pr-5'>Public Gists</div>
+              <div className='stat-value pr-5 text-3xl md:text-4xl'>
+                {public_gists}
+              </div>
             </div>
-            <div className='stat-title pr-5'>Public Gists</div>
-            <div className='stat-value pr-5 text-3xl md:text-4xl'>
-              {public_gists}
-            </div>
+            {/* end of items */}
           </div>
         </div>
 

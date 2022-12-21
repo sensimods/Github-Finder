@@ -23,16 +23,16 @@ function RepoItem({repo}) {
         </h3>
         <p className='mb-3'>{description}</p>
         <div>
-          <div className='mr-2 badge badge-info badge-lg'>
+          <div className='mr-2 badge badge-info badge-sm xl:badge-lg lg:badge-lg md:badge-lg'>
             <FaEye className='mr-2' /> {watchers_count}
           </div>
-          <div className='mr-2 badge badge-success badge-lg'>
+          <div className='mr-2 badge badge-success badge-sm xl:badge-lg lg:badge-lg md:badge-lg'>
             <FaStar className='mr-2' /> {stargazers_count}
           </div>
-          <div className='mr-2 badge badge-error badge-lg'>
+          <div className='mr-2 badge badge-error badge-sm xl:badge-lg lg:badge-lg md:badge-lg'>
             <FaInfo className='mr-2' /> {open_issues}
           </div>
-          <div className='mr-2 badge badge-warning badge-lg'>
+          <div className='mr-2 badge badge-warning badge-sm xl:badge-lg lg:badge-lg md:badge-lg'>
             <FaUtensils className='mr-2' /> {forks}
           </div>
         </div>
