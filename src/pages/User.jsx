@@ -67,11 +67,11 @@ function User() {
                 <span className='hidden xl:inline lg:inline md:inline'>
                   ({login})
                 </span>
-                <div className='ml-2 mr-1 badge badge-success badge-lg xl:badge-lg lg:badge-lg md:badge-sm'>
+                <div className='ml-2 mr-1 badge badge-success badge-md xl:badge-lg lg:badge-lg md:badge-sm'>
                   {type}
                 </div>
                 {hireable && (
-                  <div className='mx-1 badge badge-info badge-lg xl:badge-lg lg:badge-lg md:badge-sm'>
+                  <div className='badge badge-info badge-md xl:badge-lg lg:badge-lg md:badge-sm'>
                     Hireable
                   </div>
                 )}

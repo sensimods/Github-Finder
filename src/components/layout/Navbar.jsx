@@ -13,7 +13,7 @@ function Navbar({title}) {
           </Link>
         </div>
 
-        <div className='flex-1 px-2 mx-2'>
+        {/* <div className='flex-1 px-2 mx-2'>
           <div className='flex justify-end'>
             <Link
               to='/'
@@ -28,7 +28,7 @@ function Navbar({title}) {
               About
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </nav>
   )
