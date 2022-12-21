@@ -79,7 +79,7 @@ function User() {
               <span className='text-xl xl:hidden lg:hidden md:hidden'>
                 ({login})
               </span>
-              <p>{bio}</p>
+              <p className='mt-4 xl:mt-2 lg:mt-2 md:mt-2'>{bio}</p>
 
               <div className='mt-4 card-actions'>
                 <a
